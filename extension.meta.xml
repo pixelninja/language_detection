@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension id="language_detection" status="unreleased" xmlns="http://symphony-cms.com/schemas/extension/1.0">
 	<name>Language Detection</name>
-	<description>Uses headers sent by every browser to guess the users current language.</description>
+	<description>Uses the headers sent by every browser to guess the users current language.</description>
 	<repo type="github">https://github.com/pixelninja/language_detection</repo>
 	<types>
 		<type>Workflow</type>
