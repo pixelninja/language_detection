@@ -14,11 +14,17 @@
 				
 		public function addParameters($context) {
 			
-//			$session[
-//			
-//        	$context['params']['ua-latitude'] = $location['geoplugin_latitude'];
-//        	$context['params']['ua-longitude'] = $location['geoplugin_longitude'];
-//        	$context['params']['ua-country'] = $location['geoplugin_countryName'];
+			session_start();
+			
+			if (!isset($_SESSION['language'])) {
+				$_SESSION['language'] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+			}
+			
+			if ($_GET['set_language_code']) $_SESSION['language'] = $_GET['set_language_code'];
+			if ($_GET['clear_language_code']) unset($_SESSION['language']);
+			
+			
+        	$context['params']['language'] = $_SESSION['language'];
         }
 
 	}
